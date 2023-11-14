@@ -10,6 +10,9 @@ using UnityEngine.UI;
 
 namespace MVVM.Views
 {
+    /// <summary>
+    /// Монобех компонент способности
+    /// </summary>
     public class SkillNodeView: MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
         [Header("UI")]
@@ -24,8 +27,13 @@ namespace MVVM.Views
         [SerializeField] private List<SkillNodeView> m_previousSkills;
         [SerializeField] private List<SkillNodeView> m_nextSkills;
         
+        /// <summary>
+        /// Нода способности
+        /// </summary>
         public SkillNode m_skillNode;
-
+        /// <summary>
+        /// Вьюмодель способностей
+        /// </summary>
         private SkillsViewModel m_skillsViewModel;
 
         private void Awake()
@@ -37,21 +45,33 @@ namespace MVVM.Views
             m_skillButton.onClick.AddListener(OnSkillSelected);
         }
 
+        /// <summary>
+        /// Действие при нажатии на UI кнопки способности
+        /// </summary>
         private void OnSkillSelected()
         {
             m_skillsViewModel.SelectSkill(m_skillNode);
         }
-
+        
+        /// <summary>
+        /// Действие при изучении способности
+        /// </summary>
         private void OnSkillLearnedAction()
         {
             m_skillButton.image.color = Color.green;
         }
         
+        /// <summary>
+        /// Действие при забываниии способности
+        /// </summary>
         private void OnSkillForgottenAction()
         {
             m_skillButton.image.color = Color.white;
         }
 
+        /// <summary>
+        /// Инициализация компонента
+        /// </summary>
         public void Init()
         {
             m_skillName.text = SkillExtension.GetSkillName(m_skillType);

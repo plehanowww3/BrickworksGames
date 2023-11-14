@@ -3,8 +3,16 @@ using UnityEngine;
 
 namespace Helpers
 {
+    /// <summary>
+    /// Расширение для работы со способностями
+    /// </summary>
     public static class SkillExtension
     {
+        /// <summary>
+        /// Получить имя способности
+        /// </summary>
+        /// <param name="_skillEnum">Тип способности</param>
+        /// <returns>Название способности</returns>
         public static string GetSkillName(SkillsEnum _skillEnum)
         {
             switch (_skillEnum)

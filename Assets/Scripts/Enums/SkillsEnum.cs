@@ -1,5 +1,8 @@
 namespace Enums
 {
+    /// <summary>
+    /// Перечисление всех способностей
+    /// </summary>
     public enum SkillsEnum
     {
         BASE_SKILL,

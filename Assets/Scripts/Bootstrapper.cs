@@ -5,9 +5,13 @@ using UnityEngine;
 
 namespace DefaultNamespace
 {
+    /// <summary>
+    /// Бутстраппер
+    /// </summary>
     public class Bootstrapper: MonoBehaviour
     {
         [SerializeField] private ServiceLocator m_serviceLocator;
+        
         private void Awake()
         {
             var model = new Model();
